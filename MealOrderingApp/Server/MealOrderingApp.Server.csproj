@@ -6,9 +6,14 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.32">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MealOrderingApp.Server.Data\MealOrderingApp.Server.Data.csproj" />
     <ProjectReference Include="..\Client\MealOrderingApp.Client.csproj" />
     <ProjectReference Include="..\Shared\MealOrderingApp.Shared.csproj" />
   </ItemGroup>

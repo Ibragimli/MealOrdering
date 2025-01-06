@@ -11,10 +11,12 @@
     </div>
 </div>
 @code {
+
     public async override Task SetParametersAsync(ParameterView parameters)
     {
-        Message = parameters.GetValueOrDefault<string>("Message") ?? "tester";
-        OkText = "Ok";
+        Message = parameters.GetValueOrDefault<String>("Message", "Empty message");
+        OkText = parameters.GetValueOrDefault<String>("OkText", "OK");
+
         await base.SetParametersAsync(parameters);
     }
 }

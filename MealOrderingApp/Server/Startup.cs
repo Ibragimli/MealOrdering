@@ -1,4 +1,4 @@
-using Blazored.Modal;
+﻿using Blazored.Modal;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,7 +30,7 @@ namespace MealOrderingApp.Server
             services.AddRazorPages();
 
             //blazored
-            services.AddBlazoredModal(); 
+            services.AddBlazoredModal();
 
         }
 
@@ -50,8 +50,11 @@ namespace MealOrderingApp.Server
             }
 
             app.UseHttpsRedirection();
+
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
+            app.UseAuthorization();
+            app.UseAuthentication(); // Authentication kullanıyorsanız ekleyin
 
             app.UseRouting();
 
