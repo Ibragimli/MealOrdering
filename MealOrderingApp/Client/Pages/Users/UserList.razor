@@ -1,0 +1,46 @@
+﻿@page "/userlist"
+@using MealOrderingApp.Client.Pages.PageProcess;
+
+@inherits UserListProcess
+<h3>UserList</h3>
+
+@if (users != null)
+{
+    <table class="table table-hover table-sm">
+        <thead>
+            <tr>
+                <th scope="col">
+                    Id
+                </th>
+                <th scope="col">
+                    Username
+                </th>
+                <th scope="col">
+                    Email
+                </th>
+                <th scope="col">
+                    FullName
+                </th>
+
+                <th scope="col">
+                    IsActive
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in users)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Username</td>
+                    <td>@user.Email</td>
+                    <td>@user.LastName@user.FirstName</td>
+                    <td>
+                        <span Color="BadgeColor.Danger" class="badge  ">@(user.IsActive ? " success" : "danger")</span>
+                        x
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+} 

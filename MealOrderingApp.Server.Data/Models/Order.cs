@@ -10,7 +10,7 @@ namespace MealOrderingApp.Server.Data.Models
         public int SupplierId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string ExpiredDate { get; set; }
+        public DateTime ExpiredDate { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
 
         public virtual User User { get; set; }
